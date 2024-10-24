@@ -1,0 +1,11 @@
+/*element*/
+p{
+    color: greenyellow; 
+}
+
+/*universal*/
+*{
+    color: blue;
+}
+
+/*class selector -best practice*/
