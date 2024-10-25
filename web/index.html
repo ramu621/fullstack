@@ -3,28 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login form</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>login</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <from class="login-form">
-        <div>
-            <label>Email</label>
-            <input type="email" placeholder="Email">
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="password" placeholder="Password">
-        </div>
+    <form class="login-form" onsubmit="Login(event)">
+        <!-- <label for="Email">Enter ur Email: </label> -->
+        <input type="email" name="" id="email"  class="login-input" placeholder="Email" required/>
+        <br>
+        <!-- <label for="Email">Enter ur Password: </label> -->
+        <input type="password" name="" id="password" class="login-input"  placeholder="password" required/>
+        <br>
+        <input type="submit" value="Login" class="login-btn"/>
+    </form>
+    <!-- <button class="login-btn" onclick="myfunction()"> click</button> -->
+    <script>
+        console.log("Hello");
+        alert("Hello");
 
-        <input type="submit" value="Login">
-    </from>
+        let x="hi";
+        console.log(x);
+        x=30;
+        console.log(x);
+        x=false;
+        console.log(x);
+        x=null;
+        console.log(x);
+        x=undefined;
+        console.log(x);
+        let obj={
+            name:"a",
+            loc:"b",
+            age:200, 
+        }
+        let obj2={
+            name:"d",
+            loc:"c",
+            age:400, 
+        }
+
+        console.log(obj,obj2);
+        let arr=["a",obj,x,obj2];
+        console.log(arr);
+        let arr2=[1,2,3,4,5,6];
+        let arr3=[arr,"asdfgh","49",arr2];
+        console.log(arr3);
+        let arr4=[...arr,...arr2]; //spread operation
+        console.log(arr4);
+        function myfunction(){
+            console.log("hello");
+            console.log("hello");
+        }
+        // myfunction();
+        function Login(event){
+            event.preventDefault()
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;     //shift +alt+down arrow
+            console.log("Login:"+email + " " +password);
+            if (password.length<=5){
+                aletrt('password should contains more than 5 letters')
+                else if (email=="admin@gmail.com && password=="1234567890")
+                {
+             alert ('login success!')
+             API()
+             }
+             else{
+                alert('invalid credentials !')
+             }
+                API()
+            }
+        
+       
+        //myfunction()
+        function API() {
+            console.log("called api");
+            try{
+                const response = await fetch('https://671b70f62c842d92c37fec45.mockapi.io/PRODUCTS/PRODUCTS');
+                let r=response.json();
+                console.log(await r);
+            }
+
+        }
+
+    </script>
+
 </body>
-<script>
-    console.log("hello");
-    alert("hello")
-
-    let x = "10";
-    console.log(x);
-</script>
 </html>
